@@ -1,0 +1,4 @@
+<% @posts.each do |post| %>
+  <h4><%= post.title %></h4>
+  <a href="<%= url_for(post) %>">See post</a>
+<% end %>
