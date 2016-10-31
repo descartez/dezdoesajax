@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'posts#index'
-
+  get 'fetch_post' => 'posts#single_post', as: 'single_post'
   resources :posts
 
   # Example of regular route:

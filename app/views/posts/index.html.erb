@@ -1,4 +1,23 @@
-<% @posts.each do |post| %>
-  <h4><%= post.title %></h4>
-  <a href="<%= url_for(post) %>">See post</a>
-<% end %>
+<div class='row'>
+  <div class='col-md-5'>
+    <h2>Ryan Stong is:</h2>
+    <div id='posts'>
+      <% @posts.each do |post| %>
+      <h3><%= post.title %></h3>
+      <%= link_to 'see more', single_post_path(id: post.id), remote: true %>
+      <% end %>
+    </div>
+  </div>
+  <div class='col-md-4'>
+    <div class='affix'>
+      <h2>What is this?</h2>
+      <p>This is an example implementation of Sebastián González's Ajax, Rails, Partial pattern described <a href="https://coderwall.com/p/kqb3xq/rails-4-how-to-partials-ajax-dead-easy?utm_content=buffer4911a&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer">here</a>. I was attracted to the speed of which this type of pattern could be set up, and I was not disappointed. To the left are some text posts, with content in the back end. When you click the links, ajax does its thing and renders it in a div below this.</p>
+      <h2>About Me</h2>
+      <p>My name is Ryan Stong, I'm a web developer. My tools are my keyboard, Rails, Javascript, and all things Web. I'm currently working at a manufacturing company creating a custom app that tracks manufacturing machine uptime using Rails and Raspberry Pis.
+      </p>
+      <p>If you'd like to get in contact with me, you can look at my website here:  <a href="http://dezdoes.tech">dezdoes.tech</a></p>
+        <div id='single_post'>
+        </div>
+      </div>
+    </div>
+  </div>
